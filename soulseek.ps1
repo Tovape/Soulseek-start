@@ -11,7 +11,8 @@ Do {
         Start-Sleep -Seconds 1
     } Else {
         $started = $true
-		Start-Sleep -Seconds 1
+        Start-Sleep -Seconds 4
+        (New-Object -ComObject WScript.Shell).AppActivate(($sqt).MainWindowTitle)
         $sqt.CloseMainWindow()
     }
 
