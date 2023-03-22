@@ -1,9 +1,7 @@
 $started = $false
 $sqt = $null;
 
-Start-Process -Passthru -FilePath 'SoulseekQt.exe' -WindowStyle Hidden
-
-Start-Sleep -Seconds 5
+Start-Process -Passthru -FilePath 'SoulseekQt.exe'
 
 Do {
     $sqt = Get-Process -name "SoulseekQt" -ErrorAction SilentlyContinue
@@ -13,6 +11,7 @@ Do {
         Start-Sleep -Seconds 1
     } Else {
         $started = $true
+		Start-Sleep -Seconds 1
         $sqt.CloseMainWindow()
     }
 
